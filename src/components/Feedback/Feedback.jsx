@@ -1,3 +1,4 @@
+import { PropTypes } from 'prop-types';
 import { FeedbackItem, FeedbackList, StyledValue } from './Feedback.styled';
 
 export const Feedback = ({ good, neutral, bad, total, positivePercentage }) => {
@@ -25,4 +26,12 @@ export const Feedback = ({ good, neutral, bad, total, positivePercentage }) => {
 			</FeedbackItem>
 		</FeedbackList>
 	);
+};
+
+Feedback.propTypes = {
+	good: PropTypes.number.isRequired,
+	neutral: PropTypes.number.isRequired,
+	bad: PropTypes.number.isRequired,
+	total: PropTypes.number.isRequired,
+	positivePercentage: PropTypes.string.isRequired,
 };

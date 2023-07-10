@@ -14,8 +14,8 @@ class App extends Component {
 	};
 
 	onHandleClick = e => {
-		this.setState({
-			[e.target.id]: this.state[e.target.id] + 1,
+		this.setState(prevState => {
+			return { [e]: prevState[e] + 1 };
 		});
 	};
 

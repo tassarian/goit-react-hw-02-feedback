@@ -5,13 +5,19 @@ import { PropTypes } from 'prop-types';
 export const Counter = ({ option, onLeaveFeedback }) => {
 	return (
 		<CounterList>
-			{Object.keys(option).map(el => (
-				<CounterItem key={nanoid()}>
-					<Button onClick={onLeaveFeedback} id={el}>
-						{el.charAt(0).toUpperCase() + el.slice(1)}
-					</Button>
-				</CounterItem>
-			))}
+			{Object.keys(option).map(el => {
+				return (
+					<CounterItem key={nanoid()}>
+						<Button
+							onClick={() => {
+								onLeaveFeedback(el);
+							}}
+						>
+							{el.charAt(0).toUpperCase() + el.slice(1)}
+						</Button>
+					</CounterItem>
+				);
+			})}
 		</CounterList>
 	);
 };
